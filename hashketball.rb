@@ -124,31 +124,20 @@ def game_hash
   }
 end
 
-# def num_points_scored(player)
-#   game_hash.each do |status, team|
-#     team.each do |attribute, stats|
-#       if attribute == :players
-#         stats.each do |player_info| 
-#           if player_info[:player_name] == player
-#             return player_info[:points]
-#           end
-#         end 
-#       end 
-#     end
-#   end
-# end
-
-def num_points_scored(player_name)
-  
-  game_hash.each do |team, chars|
-    game_hash[:players].each do |name, stats|
-     if player_name == name
-       return stats[:points] #i tried to assign this to a variable points
-  
-      end
+def num_points_scored(player)
+  game_hash.each do |status, team|
+    team.each do |attribute, stats|
+      if attribute == :players
+        stats.each do |player_info| 
+          if player_info[:player_name] == player
+            return player_info[:points]
+          end
+        end 
+      end 
     end
   end
 end
+
 def shoe_size(player)
   game_hash.each do |status, team|
     team.each do |attribute, stats|
